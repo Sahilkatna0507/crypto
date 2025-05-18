@@ -1,10 +1,10 @@
 document.getElementById("refrenceCurrency").addEventListener("change", async function () {
     console.log("ddd");
     let selectedUUID = this.value;
-
+    await stats(selectedUUID);
 });
 
- const stats = async(selectedUUID)=> {
+async function stats(selectedUUID) {
     try {
         console.log("hhh")
         const url = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
@@ -13,13 +13,15 @@ document.getElementById("refrenceCurrency").addEventListener("change", async fun
         const totalvolume = data.data.total24hVolume;
         const totlamarket = data.data.totalMarketCap;
         const trndingcoin=data.data.bestCoins;
-         const newestCoins = data.data.newestCoins;
+        const newestCoins = data.data.newestCoins;
         const market = document.querySelector("#market-cap");
         const total = document.querySelector("#volume");
         const btc = document.querySelector('#btc-dominance');
         market.innerHTML = totlamarket;
         btc.innerHTML = btcDominance; // Clear previous rows
         total.innerHTML = totalvolume;
+
+        //NEW COINS
         const trending = document.querySelector("#trending-coins ");
         trending.innerHTML="";
         trndingcoin.forEach(coin => {
@@ -51,3 +53,4 @@ document.getElementById("refrenceCurrency").addEventListener("change", async fun
         console.error("Error fetching data:", error);
     }
 }
+stats();
