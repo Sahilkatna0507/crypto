@@ -23,8 +23,6 @@ document.getElementById("refrenceCurrency").addEventListener("change", async fun
         const trending = document.querySelector("#trending-coins ");
         trending.innerHTML="";
 
-
-        
         trndingcoin.forEach(coin => {
                const row = document.createElement('ul');
             row.innerHTML = `
