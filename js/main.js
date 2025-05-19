@@ -8,7 +8,12 @@ async function getData(selectedUUID) {
         const urlParams = new URLSearchParams(window.location.search);
         const currentPage = parseInt(urlParams.get('page')) || 1;
         const offset = (currentPage * 20);
-        const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=24h&orderBy=marketCap&orderDirection=desc&limit=20&offset=${offset}`;
+        const timePeriod = "7d";
+    //   const ttimPeriod  = document.getElementById('time-period').innerText = timePeriod;
+    //         console.log(ttimPeriod);
+
+
+        const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=${timePeriod}&orderBy=marketCap&orderDirection=desc&limit=20&offset=${offset}`;
 
         const data = await fetchDataFromAPI(url); // Function should be defined in fetch.js
         const coinList = data.data.coins;
