@@ -66,26 +66,30 @@
             </div>
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full md:w-2/3 px-4 mb-8 md:mb-0">
-                    <h2 class="text-2xl font-bold mb-4">Coins Table</h2>
+                    <div class="flex flex-wrap items-center gap-4 mb-4">
+                        <!-- Heading - 40% -->
+                        <h2 class="w-full md:w-2/5 text-2xl font-bold">Coins Table</h2>
 
-        <label for="time-period">Time Period:</label>
-  <select id="time-period" class="px-4 py-2 border rounded text-sm w-full">
-      <option value="24h">24h</option>
-      <option value="3h">3h</option>
-      <option value="7d">7d</option>
-      <option value="30d">30d</option>
-    </select>
-     <select id="time-period" class="px-4 py-2 border rounded text-sm w-full">
-      <option value="24h">Hogh to low</option>
-      <option value="3h">Low to High</option>
-    </select>
-     <select id="time-period" class="px-4 py-2 border rounded text-sm w-full">
-      <option value="24h">Price</option>
-      <option value="3h">Change</option>
-      <option value="7d">Market Cap</option>
-      <option value="30d">Volume</option>
-    </select>
+                        <!-- Each dropdown - part of remaining 60% -->
+                        <select class="w-full md:w-auto flex-1 px-4 py-2 border rounded text-sm">
+                            <option value="24h">24h</option>
+                            <option value="3h">3h</option>
+                            <option value="7d">7d</option>
+                            <option value="30d">30d</option>
+                        </select>
 
+                        <select class="w-full md:w-auto flex-1 px-4 py-2 border rounded text-sm">
+                            <option value="high-low">High to Low</option>
+                            <option value="low-high">Low to High</option>
+                        </select>
+
+                        <select class="w-full md:w-auto flex-1 px-4 py-2 border rounded text-sm">
+                            <option value="price">Price</option>
+                            <option value="change">Change</option>
+                            <option value="market-cap">Market Cap</option>
+                            <option value="volume">Volume</option>
+                        </select>
+                    </div>
 
                     <div id="coins-table-container">
                         <table class="min-w-full bg-white">
