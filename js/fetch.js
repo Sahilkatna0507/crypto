@@ -19,19 +19,14 @@
 }
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggleBtn = document.querySelector('button');
-
     themeToggleBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark");
-
-        // Optional: Save preference in localStorage
         if (document.body.classList.contains("dark")) {
             localStorage.setItem("theme", "dark");
         } else {
             localStorage.setItem("theme", "light");
         }
     });
-
-    // Load theme preference on page load
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
     }
