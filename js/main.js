@@ -12,9 +12,7 @@ async function getData(selectedUUID) {
         let sorting = urlParams.get('sort') || 'desc'; // Default to ascending if not specified
         if (sorting === 'low-high') {
             sorting = 'asc';
-        }
-        console.log(`Fetching data for UUID: ${selectedUUID}, Time Period: ${timePeriod}, Sort: ${sorting}, Offset: ${offset}`);
-        const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=${timePeriod}&orderBy=marketCap&orderDirection=${sorting}&limit=20&offset=${offset}`;
+        }        const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=${timePeriod}&orderBy=marketCap&orderDirection=${sorting}&limit=20&offset=${offset}`;
         const data = await fetchDataFromAPI(url); // Function should be defined in fetch.js
         const coinList = data.data.coins;
         const tbody = document.querySelector('#coins-table-body');
