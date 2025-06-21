@@ -20,7 +20,6 @@ async function stats(selectedUUID) {
         market.innerHTML = totlamarket;
         btc.innerHTML = btcDominance; // Clear previous rows
         total.innerHTML = totalvolume;
-
         //NEW COINS
         const trending = document.querySelector("#trending-coins ");
         trending.innerHTML="";
