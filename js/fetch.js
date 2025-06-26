@@ -5,8 +5,7 @@
             'x-rapidapi-key': 'ddc77ba17dmsh9757b4165dd8a04p179b34jsndb3e9fbbea77',
 		    'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
         }
-    };
-
+    };s
     try {
         const response = await fetch(url, options);
         const data = await response.json();
