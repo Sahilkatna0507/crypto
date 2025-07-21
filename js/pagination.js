@@ -8,6 +8,8 @@ function getCurrentPage() {
     return parseInt(urlParams.get("page")) || 1;
 }
 
+
+
 // 🔘 Create a single page button
 function createPageButton(page, currentPage) {
     const isActive = page === currentPage;
