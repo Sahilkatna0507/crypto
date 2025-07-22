@@ -4,6 +4,9 @@ document.getElementById("refrenceCurrency").addEventListener("change", async fun
     await stats(selectedUUID);
 });
 
+
+
+
 async function stats(selectedUUID) {
     try {
         console.log("hhh")
