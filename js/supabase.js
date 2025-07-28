@@ -10,7 +10,6 @@ async function fetchDataFromSupabase() {
         const { data, error } = await supabase
             .from('user')
             .select('*')
-
         if (error) {
             throw error;
         }

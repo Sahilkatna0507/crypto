@@ -1,5 +1,6 @@
 async function refrenceCurrency() {
     try {
+        
         const url = `https://coinranking1.p.rapidapi.com/reference-currencies?limit=50&offset=0`;
         const data = await fetchDataFromAPI(url); // Function from fetch.js
         const refrenceCurrency = data.data.currencies;

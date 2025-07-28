@@ -124,7 +124,6 @@ function highlow(){
     
 }
 highlow();
-
 function price(){
         const price = document.querySelectorAll('.price-btn');
         price.forEach(dropdown => {
