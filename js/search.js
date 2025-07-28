@@ -62,7 +62,6 @@ searchInput.addEventListener('input', async (e) => {
     resultsContainer.innerHTML = '<p style="text-align: center; color: #555;">Type at least 2 characters to search.</p>'; 
     return;
   }
-
   if (gamesData.length === 0) {
     gamesData = await fetchGames();
   }

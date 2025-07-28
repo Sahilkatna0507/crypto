@@ -1,7 +1,6 @@
 import { supabase } from './supabase.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   // Open/Close popup handlers
   document.getElementById('loginBtn')?.addEventListener('click', () => {
     console.log('Login button clicked');
