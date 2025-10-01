@@ -12,7 +12,7 @@ async function getData(selectedUUID) {
         let sorting = urlParams.get('sort') || 'desc'; // Default to ascending if not specified
         if (sorting === 'low-high') {
             sorting = 'asc';
-        }        const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=${timePeriod}&orderBy=marketCap&orderDirection=${sorting}&limit=20&offset=${offset}`;
+        } const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=${selectedUUID}&timePeriod=${timePeriod}&orderBy=marketCap&orderDirection=${sorting}&limit=20&offset=${offset}`;
         const data = await fetchDataFromAPI(url); // Function should be defined in fetch.js
         const coinList = data.data.coins;
         const tbody = document.querySelector('#coins-table-body');
@@ -47,7 +47,7 @@ async function getData(selectedUUID) {
                 drawSparkline(chartId, sparklineData, coin.color || '#3b82f6');
             }
         });
-    } 
+    }
     catch (error) {
         console.error("Error fetching data:", error);
     }
@@ -94,48 +94,48 @@ function formatNumber(num) {
 
 // Initial load
 getData("yhjMzLPhuIDl"); // Default: USD
-function timeDetail(){
-        const timeDropdowns = document.querySelectorAll('.time-btn');
-        timeDropdowns.forEach(dropdown => {
-            dropdown.addEventListener('change', function () {
-                const selectedPage = this.value;
-                // Update URL with ?timePeriod=selectedPage
-                const url = new URL(window.location);
-                url.searchParams.set('time', selectedPage);
-                window.location.href = url.toString(); // navigate to updated URL
-            });
+function timeDetail() {
+    const timeDropdowns = document.querySelectorAll('.time-btn');
+    timeDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('change', function () {
+            const selectedPage = this.value;
+            // Update URL with ?timePeriod=selectedPage
+            const url = new URL(window.location);
+            url.searchParams.set('time', selectedPage);
+            window.location.href = url.toString(); // navigate to updated URL
         });
-    
+    });
+
 }
 timeDetail();
 
 
-function highlow(){
-        const highlow = document.querySelectorAll('.highlow-btn');
-        highlow.forEach(dropdown => {
-            dropdown.addEventListener('change', function () {
-                const selectedPage = this.value;
-                // Update URL with ?timePeriod=selectedPage
-                const url = new URL(window.location);
-                url.searchParams.set('sort', selectedPage);
-                window.location.href = url.toString(); // navigate to updated URL
-            });
+function highlow() {
+    const highlow = document.querySelectorAll('.highlow-btn');
+    highlow.forEach(dropdown => {
+        dropdown.addEventListener('change', function () {
+            const selectedPage = this.value;
+            // Update URL with ?timePeriod=selectedPage
+            const url = new URL(window.location);
+            url.searchParams.set('sort', selectedPage);
+            window.location.href = url.toString(); // navigate to updated URL
         });
-    
+    });
+
 }
 highlow();
-function price(){
-        const price = document.querySelectorAll('.price-btn');
-        price.forEach(dropdown => {
-            dropdown.addEventListener('change', function () {
-                const selectedPage = this.value;
-                // Update URL with ?timePeriod=selectedPage
-                const url = new URL(window.location);
-                url.searchParams.set('price', selectedPage);
-                window.location.href = url.toString(); // navigate to updated URL
-            });
+function price() {
+    const price = document.querySelectorAll('.price-btn');
+    price.forEach(dropdown => {
+        dropdown.addEventListener('change', function () {
+            const selectedPage = this.value;
+            // Update URL with ?timePeriod=selectedPage
+            const url = new URL(window.location);
+            url.searchParams.set('price', selectedPage);
+            window.location.href = url.toString(); // navigate to updated URL
         });
-    
+    });
+
 }
 price();
 
